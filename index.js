@@ -223,8 +223,15 @@ function sortCarInventory(arr) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(arr) {
+  let yearsArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let year = arr.find((item, index) => {
+      return index === i;
+    })
+    yearsArr[i] = year.car_year;
+  }
+  return yearsArr;
 }
 
 /**
