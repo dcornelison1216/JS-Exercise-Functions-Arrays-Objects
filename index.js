@@ -183,8 +183,11 @@ function getLastCarInfo(arr) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(arr, num) {
+  const makeModel = arr.find((item, index) => {
+    return index === num - 1
+  })
+  return 'this is a ' + makeModel.car_make + ' ' + makeModel.car_model
 }
 
 /**
