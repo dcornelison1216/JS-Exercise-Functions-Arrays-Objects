@@ -82,7 +82,7 @@ function makeSmartPerson(arg1) {
       return num1+num2
     },
     speak: function() {
-      str = 'Hello, my name is ' + this.name;
+      let str = 'Hello, my name is ' + this.name;
       return str;
     }
   }
@@ -146,8 +146,11 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
-  /* code here */
+function getCarInfoByIndex(inventory, num) {
+  const makeModel = inventory.find((item, index) => {
+    return index === num
+  })
+  return 'This is a ' + makeModel.car_make + ' ' + makeModel.car_model
 }
 
 /**
